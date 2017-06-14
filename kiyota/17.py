@@ -11,19 +11,22 @@ hightemp.txtは，日本の最高気温の記録を「都道府県」「地点�
 # -*- coding: utf-8 -*-
 import codecs
 
+col1 = set() #セットを作成
 with codecs.open('hightemp.txt','r','utf-8') as f0:
     dataset = f0.readlines()
-
-with codecs.open('17-uniq.txt','w','utf-8') as f1:
     for row in dataset:
-        word = row.split()
-        f1.write(word[0] + '\n')
+        col1.add(row.split()[0])  # setに要素を追加するにはadd
+
+for word in sorted(col1):
+    print(word)
 
 # note
 # pythonのsetは順序の保証がない。
 # python 17.py
+# ソートしたけど、UNIXの結果と並び順は不一致。アルファベットなら合致するが日本語はNG
 
 # UNIX
 # sortコマンド：行単位にキャラコード順に並び替える
 # uniqコマンド：連続して重複した行を1つにまとめるコマンド。離れた行にも重複値がある場合、ソートが必要
-#   $ sort "C:\Users\riekok.ZIPANGU\Documents\nlp_100\kiyota\Python\17-uniq.txt" | uniq
+# awkコマンド：行単位でデータファイルを様々に加工する
+#   $ awk '{print $1}' "C:\Users\riekok.ZIPANGU\Documents\nlp_100\kiyota\Python\hightemp.txt" | sort | uniq
