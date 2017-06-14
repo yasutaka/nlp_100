@@ -43,4 +43,5 @@ create_file("col2",col2words)
 
 # UNIX
 # cutコマンド：テキストファイルの各行から指定した部分の文字列を切り出して表示
-#   $ cut -f1,3 "C:\Users\riekok.ZIPANGU\Documents\nlp_100\kiyota\Python\hightemp.txt"
+#   $ cut -f1 "C:\Users\riekok.ZIPANGU\Documents\nlp_100\kiyota\Python\hightemp.txt"
+#   $ cut -f2 "C:\Users\riekok.ZIPANGU\Documents\nlp_100\kiyota\Python\hightemp.txt"
