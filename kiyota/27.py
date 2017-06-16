@@ -8,10 +8,10 @@ Wikipediaの記事を以下のフォーマットで書き出したファイルja
 27. 内部リンクの除去
 26の処理に加えて，テンプレートの値からMediaWikiの内部リンクマークアップを除去し，テキストに変換せよ（参考: マークアップ早見表）．
 
-**wiki** 内部リンクの表記　　普通の文字だけにする
-[[記事名]]
-[[記事名|表示文字]]
-[[記事名#節名|表示文字]]
+**wiki** 内部リンクの表記
+[[記事名]] →記事名
+[[記事名|表示文字]]　⇒表示文字
+[[記事名#節名|表示文字]]　⇒表示文字
 """
 import codecs
 import json
@@ -46,7 +46,7 @@ for item in items:
 
     if s2 is not None:
         if s2.group(1) != "公式国名":
-            dic[s2.group(1)] = remove_markup(s3.group(0))
+            dic[s2.group(1)] = remove_markup(s3.group(1))
         else:
             dic["公式国名"].append(remove_markup(s3.group(0)))
     else: #公式国名のvalue

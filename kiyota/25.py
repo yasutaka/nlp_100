@@ -37,7 +37,7 @@ for item in items:
 
     if s2 is not None:
         if s2.group(1) != "公式国名":
-            dic[s2.group(1)] = s3.group(0)
+            dic[s2.group(1)] = s3.group(1)
         else:
             dic["公式国名"].append(s3.group(0))
     else: #公式国名のvalue
