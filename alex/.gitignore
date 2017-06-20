@@ -1,10 +1,51 @@
 *.txt
-/vscode
+./.vscode/
 ./vscode/
 *vscode
 *.csv
 .vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
+.vscode/settings.json
+.vscode/tasks.json
+.vscode/launch.json
+.vscode/extensions.json
+$ git status
+[...]
+# Untracked files:
+[...]
+#       Documentation/foo.html
+#       Documentation/gitignore.html
+#       file.o
+#       lib.a
+#       src/internal.o
+[...]
+$ cat .git/info/exclude
+# ignore objects and archives, anywhere in the tree.
+*.[oa]
+$ cat Documentation/.gitignore
+# ignore generated html files,
+*.html
+# except foo.html which is maintained by hand
+!foo.html
+##### insert here ####
+conf.py
+#
+*.csv
+#
+*.bin
+*.pyc
+*.mm
+*.dic
+*.dict
+*.corpus
+*.lda
+*.bow
+t.py
+#
+*.vscode
+#########
+$ git status
+[...]
+# Untracked files:
+[...]
+#       Documentation/foo.html
+[...]
