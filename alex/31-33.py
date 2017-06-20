@@ -1,7 +1,5 @@
 # author: alex
-import re
 from natto import MeCab
-import csv
 
 # 31 + 32
 with open("verbs.txt", "w+"): pass
@@ -21,7 +19,7 @@ text.close()
 res_file.close()
 
 
-# 31 + 33
+# 33
 with open("neko_hen.txt", "w+"): pass
 text = open("neko.txt","r+")
 res_file = open("neko_hen.txt", "a+")
