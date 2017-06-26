@@ -1,4 +1,5 @@
 *.txt
+*.jl
 ./.vscode/
 ./vscode/
 *vscode
