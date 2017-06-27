@@ -1,5 +1,7 @@
 library(RMeCab)
 library(ggplot2)
+library(zipfR) #for 39
+
 
 res <- RMeCabFreq("neko.txt")
 res_noun <- res[res[,2]=="名詞",]
@@ -12,7 +14,15 @@ ggplot(res_noun2, aes(x=reorder(word,freq), y=freq)) +
   geom_bar(stat = "identity", fill="pink") +
   theme_bw(base_size = 10, base_family = "HiraKakuProN-W3") +
   coord_flip()
+## first plot will be printed at this point
 
 
+
+#### ZIPF exercise 39
+ZM = lnre("zm", alpha = 2/3, B = 0.1)
+zmsample = rlnre(ZM, n=1000)
+print(zmsample)
+plot(zmsample, main="ZIPF Frequency Spectrum", col ="red")
+## ZIPF plot will be printed at this point
 
 
