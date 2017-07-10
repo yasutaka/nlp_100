@@ -1,6 +1,8 @@
 *.txt
 *.jl
 *.pdf
+*.zip
+*.gz
 ./.vscode/
 ./vscode/
 *vscode
