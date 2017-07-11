@@ -3,6 +3,10 @@
 *.pdf
 *.zip
 *.gz
+*.json
+*.txt
+*.cabocha
+preprocess.r
 ./.vscode/
 ./vscode/
 *vscode
