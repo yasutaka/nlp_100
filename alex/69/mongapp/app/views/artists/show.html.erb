@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+<h1 style="color:blue">Show the selected artist name</h1>
+<br/>
+<body style="width:80%">
+    <table>
+        <td><%= @artist.name %></td>
+        <td><%= @artist.area %></td>
+    </table>
+    <br/>
+    <%# <%= link_to 'Edit', edit_artist_path(@artist) %>
+    <div style="float:right"><%= link_to 'Back', artists_path %></div>
+</body>
