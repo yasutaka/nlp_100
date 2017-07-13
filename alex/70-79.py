@@ -3,7 +3,6 @@
 import random
 import codecs
 import re
-import time
 import pandas as pd
 from pprint import pprint
 import numpy as np
@@ -14,35 +13,30 @@ from nltk.stem.porter import PorterStemmer
 from sklearn.cross_validation import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import classification_report
-import matplotlib.pyplot as plt
-import numpy as np
 from sklearn.metrics import roc_curve, auc
-import matplotlib.pyplot as plt
-import random
-
-from sklearn import svm, datasets
 from sklearn.metrics import precision_recall_curve
 from sklearn.metrics import average_precision_score
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import label_binarize
-from sklearn.multiclass import OneVsRestClassifier
+import matplotlib.pyplot as plt
+
 
 ## 70
-# feelings = []
-# with codecs.open('rt-polaritydata/rt-polaritydata/rt-polarity.pos', 'rb') as pos:
-#     p = pos.readlines()
-#     for pp in p:
-#         feelings.append(str(str('+1') + '\t' +pp))
+feelings = []
+with codecs.open('rt-polaritydata/rt-polaritydata/rt-polarity.pos', 'rb') as pos:
+    p = pos.readlines()
+    for pp in p:
+        feelings.append(str(str('+1') + '\t' +pp))
 
-# with codecs.open('rt-polaritydata/rt-polaritydata/rt-polarity.neg', 'rb') as neg:
-#     p = neg.readlines()
-#     for pp in p:
-#         feelings.append(str(str('-1') + '\t' +pp))
+with codecs.open('rt-polaritydata/rt-polaritydata/rt-polarity.neg', 'rb') as neg:
+    p = neg.readlines()
+    for pp in p:
+        feelings.append(str(str('-1') + '\t' +pp))
 
-# random.shuffle(feelings)
-# with codecs.open('sentiment.txt', 'w+') as f:
-#     for line in feelings:
-#         f.write(line)
+random.shuffle(feelings)
+with codecs.open('sentiment.txt', 'a+') as f:
+    for line in feelings:
+        f.write(line)
 
 
 
